@@ -1,4 +1,4 @@
-const API_URL = 'https://absensi-app-six.vercel.app/api/admin'; // Sesuaikan dengan alamat backend Anda
+const API_URL = 'https://sman16-absensi.et.r.appspot.com/api/admin'; // Sesuaikan dengan alamat backend Anda
 const token = localStorage.getItem('token');
 
 // ✅ Cek autentikasi, jika tidak ada token, redirect ke login
@@ -285,7 +285,7 @@ function assignTeacher() {
 function loadTeacherSchedule() {
     const token = localStorage.getItem("token");
 
-    fetch("https://absensi-app-six.vercel.app/api/admin/teachers-schedule", {
+    fetch("https://sman16-absensi.et.r.appspot.com/api/admin/teachers-schedule", {
         headers: {
             "Authorization": `Bearer ${token}`
         }

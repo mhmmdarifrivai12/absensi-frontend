@@ -30,7 +30,7 @@ function logout() {
 function fetchAssignedClasses() {
     const token = localStorage.getItem('token');
 
-    fetch('https://absensi-app-six.vercel.app/api/teacher/assigned-classes', {
+    fetch('https://sman16-absensi.et.r.appspot.com/api/teacher/assigned-classes', {
         method: 'GET',
         headers: { 'Authorization': `Bearer ${token}` }
     })
@@ -56,7 +56,7 @@ function fetchStudents() {
     
     if (!classId) return;
 
-    fetch(`https://absensi-app-six.vercel.app/api/teacher/students/${classId}`, {
+    fetch(`https://sman16-absensi.et.r.appspot.com/api/teacher/students/${classId}`, {
         method: 'GET',
         headers: { 'Authorization': `Bearer ${token}` }
     })
@@ -105,7 +105,7 @@ function fetchAttendanceHistory() {
 
     if (!classId) return;
 
-    fetch(`https://absensi-app-six.vercel.app/api/teacher/attendance-history/${classId}`, {
+    fetch(`https://sman16-absensi.et.r.appspot.com/api/teacher/attendance-history/${classId}`, {
         method: 'GET',
         headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
     })
@@ -183,7 +183,7 @@ async function submitAttendance(event) {
     console.log('📤 Data yang dikirim ke server:', JSON.stringify({ attendance: attendanceData }, null, 2));
 
     try {
-        const response = await fetch('https://absensi-app-six.vercel.app/api/teacher/attendance', {
+        const response = await fetch('https://sman16-absensi.et.r.appspot.com/api/teacher/attendance', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
