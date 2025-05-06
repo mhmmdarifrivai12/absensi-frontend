@@ -5,25 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monitoring Absensi</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #eaf4fc; /* Soft blue background */
+            color: #333;
+        }
+
+        h2 {
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #0077b6; /* Deep blue */
+        }
+
+        .form-section {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 119, 182, 0.2);
+        }
+
+        label {
+            font-weight: 500;
+            color: #023e8a; /* Dark blue for labels */
+        }
+
+        .form-control {
+            border-radius: 6px;
+            border: 1px solid #90e0ef; /* Light aqua border */
+        }
+
+        select.form-control:focus, input[type="date"]:focus {
+            border-color: #0077b6;
+            box-shadow: 0 0 5px rgba(0, 119, 182, 0.5);
+        }
+
+        #attendanceTable {
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
     <div class="container mt-5">
-        <h2>Monitoring Absensi</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <label for="classSelect">Pilih Kelas</label>
-                <select id="classSelect" class="form-control">
-                    <option value="">-- Pilih Kelas --</option>
-                    <!-- Kelas akan dimuat di sini -->
-                </select>
+        <div class="form-section">
+            <h2>Monitoring Siswa SMAN 16 Bandar Lampung</h2>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="classSelect">Pilih Kelas</label>
+                    <select id="classSelect" class="form-control">
+                        <option value="">-- Pilih Kelas --</option>
+                        <!-- Kelas akan dimuat di sini -->
+                    </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="dateSelect">Pilih Tanggal</label>
+                    <input type="date" id="dateSelect" class="form-control">
+                </div>
             </div>
-            <div class="col-md-4">
-                <label for="dateSelect">Pilih Tanggal</label>
-                <input type="date" id="dateSelect" class="form-control">
-            </div>
-        </div>
 
-        <div id="attendanceTable" class="mt-5"></div>
+            <div id="attendanceTable" class="mt-4"></div>
+        </div>
     </div>
 
     <script src="tumbal.js"></script>
